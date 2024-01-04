@@ -11,8 +11,11 @@ export default function Header() {
           <Link className="hover:font-medium" href={""}>Shop</Link>
           <Link className="hover:font-medium" href={""}>About</Link>
           <Link className="hover:font-medium" href={""}>Contact</Link>
-          <Link className="hover:font-medium bg-blue-800 text-white px-6 py-1 rounded-full" href={""}>Loging</Link>
         </nav>
+        <nav className='bg-slate-700 py-4  rounded-3xl'>
+        <Link className="hover:font-medium text-white px-4 py-4 " href={""}>Register</Link>
+        <Link className="hover:font-medium bg-blue-800 text-white px-8 w-full py-4  rounded-full" href={""}>Loging</Link>
+       </nav>
       </header>
     </div>
   )
