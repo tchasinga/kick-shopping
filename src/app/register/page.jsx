@@ -12,6 +12,10 @@ export default function Register() {
           <TextField type='password' variant='outlined' id="" label="enter your password here" helperText='your password must have 8 characters' required/>
           <Button type='submit' className='w-2/3' variant='outlined'>register</Button>
          </div>
+         <div className='my-4 text-center text-slate-600'>or login with provider</div>
+          <div className="text-center border p-3 rounded-lg font-medium">
+          <button className=''>Login with google</button>
+          </div>
         </form>
     </section>
   )
