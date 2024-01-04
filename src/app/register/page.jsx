@@ -13,7 +13,7 @@ export default function Register() {
           <Button type='submit' className='w-2/3' variant='outlined'>register</Button>
          </div>
          <div className='my-4 text-center text-slate-600'>or login with provider</div>
-          <div className="text-center border p-3 rounded-lg font-medium">
+          <div className="text-center border p-3 rounded-2xl font-medium">
           <button className=''>Login with google</button>
           </div>
         </form>
