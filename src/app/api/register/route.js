@@ -1,4 +1,3 @@
-
-export default function POST() {
-    return Response.json('ok')
+export  function POST(req) {
+ return Response.json("ok")
 }

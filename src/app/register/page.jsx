@@ -12,13 +12,25 @@ export default function Register() {
 
   const handlerFormsubmit = (ev) => {
     ev.preventDefault()
-    fetch(`/api/register`, {
+    fetch('../api/register/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ email, password }),
-    })
+   })
+   .then(response => {
+      if (!response.ok) {
+         throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+   })
+   .then(data => {
+      console.log('Success:', data);
+   })
+   .catch(error => {
+      console.error('Error:', error);
+   });
   }
  
   return (
