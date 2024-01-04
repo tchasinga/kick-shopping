@@ -1,5 +1,4 @@
 "use client"
-
 import React from 'react'
 import { TextField ,Button , Tooltip} from '@mui/material';
 import {useState} from 'react'
@@ -12,7 +11,7 @@ export default function Register() {
 
   const handlerFormsubmit = (ev) => {
     ev.preventDefault()
-    fetch('../api/register/', {
+    fetch("../api/register/", {
       method: 'POST',
       headers: {
          'Content-Type': 'application/json',
