@@ -29,7 +29,12 @@ export default function HomeMenu() {
             <MenuItem/>
             <MenuItem/>
             <MenuItem/>
-
+            <MenuItem/>
+            <MenuItem/>
+            <MenuItem/>
+            <MenuItem/>
+            <MenuItem/> 
+            <MenuItem/>
         </div>
     </section>
   )
