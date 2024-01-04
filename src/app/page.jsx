@@ -11,7 +11,7 @@ export default function Home() {
           <Link className="hover:font-medium" href={""}>Shop</Link>
           <Link className="hover:font-medium" href={""}>About</Link>
           <Link className="hover:font-medium" href={""}>Contact</Link>
-          <Link className="hover:font-medium" href={""}>Loging</Link>
+          <Link className="hover:font-medium bg-blue-800 text-white px-6 py-1 rounded-lg" href={""}>Loging</Link>
         </nav>
       </header>
     </>

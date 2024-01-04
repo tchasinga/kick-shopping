@@ -3,3 +3,11 @@
 @tailwind utilities;
 
 
+.bg-blue-800{
+    background-color: #2c5382;
+    transition: all 3s ease;
+}
+
+.bg-blue-800:hover{
+    background-color: #733804d8;
+}
