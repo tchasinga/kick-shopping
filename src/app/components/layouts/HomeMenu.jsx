@@ -23,7 +23,7 @@ export default function HomeMenu() {
         <h2 className=''>List of product</h2>      
         </div>
         <div className="mygrid mt-36">
-           <MenuItem/>
+            <MenuItem/>
             <MenuItem/>
             <MenuItem/>
             <MenuItem/>
