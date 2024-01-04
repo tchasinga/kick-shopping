@@ -7,7 +7,14 @@ import Image from "next/image";
 export default function Heros() {
     const [imageIndex, setImageIndex] = useState(0);
     const image = [
-
+        '../../img/AirJordan5Retro.png',
+        '../../img/AppleAirPods.png',
+        '../../img/Girl-jordan.png',
+        '../../img/Jordan1.png',
+        '../../img/MoreImages-fotor.png',
+        '../../img/TrendtationAirfor.png',
+        '../../img/YeezySlidesSlate.png',
+        '../../img/air-jordan-4-retro-se-craft.png',
     ]
 
   return (
