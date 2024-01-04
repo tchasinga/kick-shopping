@@ -1,11 +1,4 @@
 
 export default function POST() {
-    
-
-
-  return (
-    <div>
-
-    </div>
-  )
+    return Response.json('ok')
 }
