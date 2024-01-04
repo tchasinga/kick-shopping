@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Header from "./components/layouts/Header";
 import Heros from "./components/layouts/Heros";
 import HomeMenu from "./components/layouts/HomeMenu";
 import Store from "./components/history/Store";
@@ -8,7 +7,7 @@ import Store from "./components/history/Store";
 export default function Home() {
   return (
     <> 
-    <Header/>
+   
     <Heros/>
     <HomeMenu/>
     <Store/>
