@@ -3,6 +3,7 @@ import Image from "next/image";
 import imgOne from "../img/Girl-jordan.png";
 import imgTwo from "../img/AppleAirPods.png";
 import MenuItem from '../Menu/MenuItem';
+import SectionHeader from './SectionHeader';
 
 export default function HomeMenu() {
   return (
@@ -19,8 +20,7 @@ export default function HomeMenu() {
         </div>
 
         <div className="text-center">
-        <h3 className='uppercase text-3xl font-semibold'>CHECK OUT OUR PRODUCT HERE</h3>
-        <h2 className=''>List of product</h2>      
+          <SectionHeader/> 
         </div>
         <div className="mygrid mt-36">
             <MenuItem/>
@@ -29,7 +29,7 @@ export default function HomeMenu() {
             <MenuItem/>
             <MenuItem/>
             <MenuItem/>
-            <MenuItem/>
+            <MenuItem/> 
             <MenuItem/>
             <MenuItem/>
             <MenuItem/>

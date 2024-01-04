@@ -10,6 +10,10 @@ export default function Home() {
     <Header/>
     <Heros/>
     <HomeMenu/>
+
+    <section className="">
+      
+    </section>
     </>
   );
 }
