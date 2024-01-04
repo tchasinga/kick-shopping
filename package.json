@@ -23,6 +23,7 @@
     "jsonfile": "^6.1.0",
     "ldrs": "^1.0.1",
     "lottie-react": "^2.4.0",
+    "mongoose": "^8.0.3",
     "next": "14.0.4",
     "next-auth": "^4.24.5",
     "prop-types": "^15.8.1",
