@@ -2,6 +2,7 @@ import React from 'react';
 import Image from "next/image";
 import imgOne from "../img/Girl-jordan.png";
 import imgTwo from "../img/AppleAirPods.png";
+import MenuItem from '../Menu/MenuItem';
 
 export default function HomeMenu() {
   return (
@@ -20,7 +21,16 @@ export default function HomeMenu() {
         <div className="text-center">
         <h3 className='uppercase text-3xl font-semibold'>CHECK OUT OUR PRODUCT HERE</h3>
         <h2 className=''>List of product</h2>      
-        </div>  
+        </div>
+        <div className="mygrid mt-36">
+           <MenuItem/>
+            <MenuItem/>
+            <MenuItem/>
+            <MenuItem/>
+            <MenuItem/>
+            <MenuItem/>
+
+        </div>
     </section>
   )
 }
