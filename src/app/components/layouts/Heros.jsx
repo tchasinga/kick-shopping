@@ -1,6 +1,15 @@
-import React from 'react'
+"use client"
+import React from 'react';
+import { useState , useEffect } from 'react';
+import Image from "next/image";
+
 
 export default function Heros() {
+    const [imageIndex, setImageIndex] = useState(0);
+    const image = [
+
+    ]
+
   return (
     <div>
         <h1>KICK SHOPPING</h1>
