@@ -66,7 +66,7 @@ export default function Register() {
           </div>
           <div className='flex  gap-2 text-xs mt-3'>
             <p>Already have an account</p>
-            <Link className='text-green-800' href={`/login`}>Login &raquo;</Link>
+            <Link className='text-green-800 font-extrabold' href={`/login`}>Login &raquo;</Link>
           </div>
         </form>
          {error && (
