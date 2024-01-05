@@ -24,7 +24,7 @@ export default function Header() {
         <nav className='bg-slate-700 rounded-full flex items-center gap-3'>
           {status === 'authenticated' && (
             <>
-              <Link className="hover:font-medium text-white px-4 py-4 " href={"/profile"}>
+              <Link className="hover:font-medium text-white px-4 py-4 " href={"/profiles"}>
                 <Image src={userImage} alt={userName} width={40} height={40} className='rounded-full' />
               </Link>
               <button onClick={() => signOut()} className="hover:font-medium text-white px-4 py-4 ">Logout</button>
