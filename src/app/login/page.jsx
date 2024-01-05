@@ -15,7 +15,7 @@ export default function Loginpages() {
       ev.preventDefault();
       setLoginInProgress(true);
       await signIn('credentials' , {
-        username: email, // Change 'email' to 'username' as per your CredentialsProvider configuration
+        email,
         password
       })
       setLoginInProgress(false);

@@ -1,7 +1,13 @@
+"use client"
+
 import React from 'react'
 import Link from "next/link";
+import { useSession } from 'next-auth/react';
 
 export default function Header() {
+   const session = useSession();
+    console.log(session)
+
   return (
     <div>
        <header className="flex items-center justify-between">
