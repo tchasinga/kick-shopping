@@ -1,4 +1,5 @@
 import { Schema, model, models } from 'mongoose';
+import bcrypt from 'bcrypt';
 
 const UserSchema = new Schema({
     email: {
@@ -17,6 +18,14 @@ const UserSchema = new Schema({
     },
 }, { timestamps: true });
 
-const User = models.User || model('User', UserSchema);
+UserSchema.post('validate' , function (user) {
+    console.log('New user validated', user);
+    // user.password = user.password.toUpperCase();
+    user.password = bcrypt.hashSync(user.password, 10);
+
+})
+
+const User = models.User || model('User', UserSchema); 
 
 export default User;
+// this page is for code Models 
