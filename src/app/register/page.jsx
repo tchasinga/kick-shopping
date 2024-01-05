@@ -64,6 +64,10 @@ export default function Register() {
           <div className="text-center border p-3 rounded-2xl font-medium">
           <button className=''>Login with google</button>
           </div>
+          <div className='flex  gap-2 text-xs mt-3'>
+            <p>Already have an account</p>
+            <Link className='text-green-800' href={`/login`}>Login &raquo;</Link>
+          </div>
         </form>
          {error && (
              <div className={`bgBlack ${error ? 'visible' : 'hidden'}`}>
