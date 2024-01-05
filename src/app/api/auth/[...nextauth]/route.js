@@ -12,7 +12,7 @@ const LocaGet = "balolebwamitchasingathebest"
 const myOneId = "294861944305-kdef5bgfvd4grq65jiur0c7m18tcekf3.apps.googleusercontent.com"
 const myTwoId = "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"
 
-const handler = NextAuth({
+ export const authOptions = {
   secret: process.env.SECRET || LocaGet,
   adapter: MongoDBAdapter(clientPromise),
   providers: [
@@ -52,6 +52,8 @@ const handler = NextAuth({
       }
     })
   ]
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
