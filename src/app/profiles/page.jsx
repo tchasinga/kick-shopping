@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react';
 import { redirect, useRouter } from "next/navigation";
 import Image from "next/image";
@@ -12,7 +12,13 @@ export default function Pages() {
     console.log(session);
     const userImage = session?.user?.image;
     const username = session?.user?.name;
-    const [userName, setUserName] = useState(session?.user?.name);
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+        if (status === 'authenticated') {
+            setUserName(session?.user?.name);
+        }
+    }, [session , status]);
 
     if (status === 'loading') {
         return <div className='text-center'>Loading...</div>
@@ -24,7 +30,7 @@ export default function Pages() {
 
     const handlerUpdating = async (ev) => {
         ev.preventDefault();
-        const res = await fetch('../api/profiles/', {
+        const res = await fetch('../api/profiles', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
