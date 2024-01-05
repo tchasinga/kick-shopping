@@ -1,13 +1,14 @@
 // Assuming these are your environment variables
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import * as mongoose from "mongoose";
-import User from "../../models/user.model.js";
-import bcrypt from 'bcrypt';
+// import * as mongoose from "mongoose";
+// import User from "../../models/user.model.js";
+// import bcrypt from 'bcrypt';
+
+const LocaGet = "balolebwamitchasingathebest"
 
 const handler = NextAuth({
-  // Configure one or more authentication providers
-  secret: process.env.NEXTAUTH_SECRET || NO_SECRET,
+  secret: process.env.SECRET || LocaGet,
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -19,6 +20,7 @@ const handler = NextAuth({
       async authorize(credentials, req) {
         console.log({ credentials });
         // You need to provide your own logic here that takes the credentials
+        return null;
       }
     })
   ]
