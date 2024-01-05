@@ -3,6 +3,7 @@ import React from 'react'
 import { TextField ,Button , Tooltip} from '@mui/material';
 import {useState} from 'react'
 import Link from 'next/link'
+import { signIn } from 'next-auth/react'
 
 
 export default function Register() {
@@ -56,13 +57,13 @@ export default function Register() {
 
         <form className=' max-w-xl mx-auto mt-6' onSubmit={handlerFormsubmit}>
          <div className="w-full flex flex-col">
-         <TextField type='email' variant='outlined' disabled={creatingUser} value={email} onChange={ev => setEmail(ev.target.value)} id="" label="enter your email here" helperText='your email must have @ property' required/>
-          <TextField type='password' variant='outlined' disabled={creatingUser} value={password} onChange={ev =>setPassword(ev.target.value)} id="" label="enter your password here" helperText='your password must have 8 characters' required/>
+         <TextField type='email' variant='outlined' disabled={creatingUser} value={email} onChange={ev => setEmail(ev.target.value)} id="" label="enter your email here" helperText='your email must have @ property' />
+          <TextField type='password' variant='outlined' disabled={creatingUser} value={password} onChange={ev =>setPassword(ev.target.value)} id="" label="enter your password here" helperText='your password must have 8 characters' />
           <Button type='submit' className='w-2/3' disabled={creatingUser} variant='outlined'>register</Button>
          </div>
          <div className='my-4 text-center text-slate-600'>or login with provider</div>
           <div className="text-center border p-3 rounded-2xl font-medium">
-          <button className=''>Login with google</button>
+          <button onClick={()=> signIn('google' , {callbackUrl:'/'})} className=''>Login with google</button>
           </div>
           <div className='flex  gap-2 text-xs mt-3'>
             <p>Already have an account</p>

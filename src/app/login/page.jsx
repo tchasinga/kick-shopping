@@ -15,6 +15,7 @@ export default function Loginpages() {
       ev.preventDefault();
       setLoginInProgress(true);
       await signIn('credentials' , {
+         callbackUrl: '/',
         email,
         password
       })
@@ -34,7 +35,7 @@ export default function Loginpages() {
          </div>
          <div className='my-4 text-center text-slate-600'>Or login with provider</div>
           <div className="text-center border p-3 rounded-2xl font-medium">
-          <button className=''>Login with google</button>
+          <button type='button' onClick={()=> signIn('google' , {callbackUrl:'/'})} className=''>Login with google</button>
          </div>
          <div className='flex  gap-2 text-xs mt-3'>
             <p>Don't have an account</p>

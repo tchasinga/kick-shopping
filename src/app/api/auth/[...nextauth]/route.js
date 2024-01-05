@@ -4,12 +4,22 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import * as mongoose from "mongoose";
 import User from "../../models/user.model.js";
 import bcrypt from 'bcrypt';
+import GoogleProvider from "next-auth/providers/google";
+import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import clientPromise from "../../../libs/mongoConnect.js"; // This is the module from the previous snippet
 
 const LocaGet = "balolebwamitchasingathebest"
+const myOneId = "294861944305-kdef5bgfvd4grq65jiur0c7m18tcekf3.apps.googleusercontent.com"
+const myTwoId = "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"
 
 const handler = NextAuth({
   secret: process.env.SECRET || LocaGet,
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID || myOneId,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || myTwoId,
+    }),
     CredentialsProvider({
       name: "Credentials",
       id: "credentials",
@@ -29,9 +39,8 @@ const handler = NextAuth({
             console.log('No user found with this email');
             return null;
           }
-        
           const passwordOk = await bcrypt.compare(password, user.password)
-        
+  
           if (passwordOk) {
             return { email: user.email }; // return user email
           }
