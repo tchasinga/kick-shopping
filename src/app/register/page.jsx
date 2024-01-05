@@ -9,9 +9,9 @@ export default function Register() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('') 
 
-  const handlerFormsubmit = (ev) => {
+  const  handlerFormsubmit  = async (ev) => {
     ev.preventDefault()
-    fetch("../api/register/", {
+  await fetch("../api/register/", {
       method: 'POST',
       headers: {
          'Content-Type': 'application/json',
