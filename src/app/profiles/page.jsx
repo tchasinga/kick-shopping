@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react';
 import { redirect, useRouter } from "next/navigation";
 import Image from "next/image";
@@ -12,7 +12,22 @@ export default function Pages() {
     console.log(session);
     const userImage = session?.user?.image;
     const username = session?.user?.name;
-    const [userName, setUserName] = useState(session?.user?.name);
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+        if (status === 'authenticated') {
+            setUserName(session?.user?.name);
+            fetch('../api/count').then(response => {
+                if (response.ok && response.body) {
+                    response.json().then(data => {
+                        setAdmin(data.user.admins);
+                    })
+                } else {
+                    console.error('No data returned by the API');
+                }
+            })
+        }
+    }, [session , status]);
 
     if (status === 'loading') {
         return <div className='text-center'>Loading...</div>
@@ -24,7 +39,7 @@ export default function Pages() {
 
     const handlerUpdating = async (ev) => {
         ev.preventDefault();
-        const res = await fetch('../api/profiles/', {
+        const res = await fetch('../api/profiles', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,7 +57,7 @@ export default function Pages() {
      <h1 className='text-center text-slate-900 text-2xl font-medium'>My profile pages...</h1>
 
       <div className='max-w-md mx-auto '> 
-         <div className="flex gap-2 items-center">
+         <div className="flex gap-2 items-center flex-1">
             <div className="">
                 <div className="bg-gray-200 p-3 flex flex-col justify-center items-center flex-1">
                 <Image src={userImage} alt={username} width={80} height={80} className='rounded-full' />
@@ -51,9 +66,12 @@ export default function Pages() {
             </div>
 
          
-           <form className="grow" onSubmit={handlerUpdating}>
+           <form className="flex-1 " onSubmit={handlerUpdating}>
                 <input type="text"  placeholder='First and last name' value={userName} onChange={ev => setUserName(ev.target.value)}/>
                 <input type="text" name="" disabled id="" value={session.user.email} />
+                <input type="text" placeholder='Street adress'/>
+                <input type="text" placeholder='City'/>
+                <input type="text" placeholder='Country'/>
                 <button className='bg-black text-white px-6 py-2 rounded-3xl text-xs font-bold'>Save</button>
             </form>
          </div>

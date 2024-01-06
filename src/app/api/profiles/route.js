@@ -1,6 +1,6 @@
 import React from 'react'
 import mongoose from "mongoose";
-// import User from "../models/user.model.js";
+import User from "../models/user.model.js";
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../auth/[...nextauth]/route.js';
 
@@ -12,7 +12,11 @@ export default async function  PUT(req) {
   const email = session.user.email;
   
   if('name' in data){
-   await User.updateOne({email}, {$set: {name: data.name}})
+    const result  = await User.updateOne({ email}, {name: data.name})
+    console.log({email, update: {name: data.name}, result})
   } 
   return Response.json(true);
+
+  // Add get request here
+
 }
