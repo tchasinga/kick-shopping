@@ -12,7 +12,8 @@ const LocaGet = "balolebwamitchasingathebest"
 const myOneId = "294861944305-kdef5bgfvd4grq65jiur0c7m18tcekf3.apps.googleusercontent.com"
 const myTwoId = "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"
 
- export const authOptions = {
+// Removed the export keyword from here
+const authOptions = {
   secret: process.env.SECRET || LocaGet,
   adapter: MongoDBAdapter(clientPromise),
   providers: [
