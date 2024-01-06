@@ -38,7 +38,7 @@ export default function Loginpages() {
           <button type='button' onClick={()=> signIn('google' , {callbackUrl:'/'})} className=''>Login with google</button>
          </div>
          <div className='flex  gap-2 text-xs mt-3'>
-            <p>Don't have an account</p>
+            <p>Don&apos;t have an account</p>
             <Link className='text-green-800 font-extrabold' href={`/register`}>register &raquo;</Link>
           </div>
     </form>
