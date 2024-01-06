@@ -16,4 +16,7 @@ export default async function  PUT(req) {
     console.log({email, update: {name: data.name}, result})
   } 
   return Response.json(true);
+
+  // Add get request here
+
 }
