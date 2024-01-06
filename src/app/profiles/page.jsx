@@ -17,15 +17,6 @@ export default function Pages() {
     useEffect(() => {
         if (status === 'authenticated') {
             setUserName(session?.user?.name);
-            fetch('../api/count').then(response => {
-                if (response.ok && response.body) {
-                    response.json().then(data => {
-                        setAdmin(data.user.admins);
-                    })
-                } else {
-                    console.error('No data returned by the API');
-                }
-            })
         }
     }, [session , status]);
 
